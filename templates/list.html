@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+
+{% block content %}
+    <div class="uk-container uk-container-small">
+    <ul class="uk-list">
+    {% for task in object_list %}
+        {% if task.completed %}
+         <li><label><input class="uk-checkbox" type="checkbox" checked> <del>{{ task  }}</del></label></li>
+        {% else %}
+        <li><label><input class="uk-checkbox" type="checkbox" > {{ task  }}</label></li>
+        {% endif %}
+    {% endfor %}
+    </ul>
+    </div>
+{% endblock %}
